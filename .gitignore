@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Node.js dependencies
 node_modules/
 npm-debug.log*
@@ -38,44 +37,3 @@ coverage/
 
 # Optional if you use Docker
 docker-compose.override.yml
-=======
-# Node.js dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Logs
-logs
-*.log
-logs/*.log
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Build / dist
-dist/
-build/
-
-# Coverage / testing
-coverage/
-.nyc_output/
-
-# Editor stuff
-.vscode/
-.idea/
-*.swp
-
-# Optional if you use Docker
-docker-compose.override.yml
->>>>>>> 01c8e65c1ecf403fd88d67547e86702d15212d13

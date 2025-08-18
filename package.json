@@ -2,6 +2,17 @@
   "name": "stack-overload",
   "version": "1.0.0",
   "description": "stack overload project",
+<<<<<<< HEAD
+=======
+  "homepage": "https://github.com/RaghavNagi/Stack-Overload#readme",
+  "bugs": {
+    "url": "https://github.com/RaghavNagi/Stack-Overload/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaghavNagi/Stack-Overload.git"
+  },
+>>>>>>> 01c8e65c1ecf403fd88d67547e86702d15212d13
   "license": "ISC",
   "author": "",
   "type": "commonjs",
@@ -13,7 +24,10 @@
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
+<<<<<<< HEAD
     "bcryptjs": "^3.0.2",
+=======
+>>>>>>> 01c8e65c1ecf403fd88d67547e86702d15212d13
     "cloudinary": "^2.7.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",

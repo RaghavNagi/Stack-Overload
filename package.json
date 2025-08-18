@@ -2,6 +2,7 @@
   "name": "stack-overload",
   "version": "1.0.0",
   "description": "stack overload project",
+<<<<<<< HEAD
   "homepage": "https://github.com/RaghavNagi/Stack-Overload#readme",
   "bugs": {
     "url": "https://github.com/RaghavNagi/Stack-Overload/issues"
@@ -10,6 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/RaghavNagi/Stack-Overload.git"
   },
+=======
+>>>>>>> priyansh
   "license": "ISC",
   "author": "",
   "type": "commonjs",

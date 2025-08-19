@@ -21,7 +21,7 @@ const register = async (req, res, next) => {
       user.email,
       "Welcome to StackOverload 🎉",
       `<h1>Hello ${user.username},</h1>
-       <p>Thanks for registering! You're now part of the community 🚀</p>`
+      <p>Thanks for registering! You're now part of our community </p>``Keep overloading 💪💪`
     );
 
     res.status(201).json({

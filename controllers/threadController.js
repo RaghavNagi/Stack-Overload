@@ -1,6 +1,6 @@
 const Thread = require("../models/Thread");
 
-exports.createThread = async (req, res, next) => {
+const createThread = async (req, res, next) => {
   try {
     const { title, body, tags, category } = req.body;
     const thread = await Thread.create({
@@ -16,7 +16,7 @@ exports.createThread = async (req, res, next) => {
   }
 };
 
-exports.getThreads = async (req, res, next) => {
+const getThreads = async (req, res, next) => {
   try {
     const { search, tag, category } = req.query;
     let query = {};
@@ -31,7 +31,7 @@ exports.getThreads = async (req, res, next) => {
   }
 };
 
-exports.getThread = async (req, res, next) => {
+const getThread = async (req, res, next) => {
   try {
     const thread = await Thread.findById(req.params.id).populate(
       "author",
@@ -44,7 +44,7 @@ exports.getThread = async (req, res, next) => {
   }
 };
 
-exports.voteThread = async (req, res, next) => {
+const voteThread = async (req, res, next) => {
   try {
     const { vote } = req.body; // vote: 1 or -1
     const thread = await Thread.findById(req.params.id);
@@ -56,4 +56,11 @@ exports.voteThread = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+};
+
+module.exports = {
+  createThread,
+  getThreads,
+  getThread,
+  voteThread,
 };

@@ -1,7 +1,7 @@
 const Tag = require("../models/Tag");
 const Thread = require("../models/Thread");
 
-exports.createTag = async (req, res) => {
+const createTag = async (req, res) => {
   const { name, description } = req.body;
   try {
     const existingTag = await Tag.findOne({ name: name.toLowerCase() });
@@ -21,7 +21,7 @@ exports.createTag = async (req, res) => {
   }
 };
 
-exports.getTags = async (req, res) => {
+const getTags = async (req, res) => {
   try {
     const { sort = "usage" } = req.query;
     let sortOption = {};
@@ -47,7 +47,7 @@ exports.getTags = async (req, res) => {
   }
 };
 
-exports.getPopularTags = async (req, res) => {
+const getPopularTags = async (req, res) => {
   try {
     const { limit = 10 } = req.query;
     const tags = await Tag.find()
@@ -59,7 +59,7 @@ exports.getPopularTags = async (req, res) => {
   }
 };
 
-exports.getTagStats = async (req, res) => {
+const getTagStats = async (req, res) => {
   try {
     const { tagName } = req.params;
     const tag = await Tag.findOne({ name: tagName.toLowerCase() });
@@ -83,4 +83,11 @@ exports.getTagStats = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Server error" });
   }
+};
+
+module.exports = {
+  createTag,
+  getTags,
+  getPopularTags,
+  getTagStats,
 };

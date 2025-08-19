@@ -2,7 +2,7 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const generateToken = require("../utils/generateToken");
 
-exports.register = async (req, res, next) => {
+const register = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
     const userExists = await User.findOne({ email });
@@ -27,7 +27,7 @@ exports.register = async (req, res, next) => {
   }
 };
 
-exports.login = async (req, res, next) => {
+const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
@@ -48,7 +48,7 @@ exports.login = async (req, res, next) => {
   }
 };
 
-exports.getProfile = async (req, res, next) => {
+const getProfile = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id).select("-password");
     if (!user) return res.status(404).json({ message: "User not found" });
@@ -56,4 +56,10 @@ exports.getProfile = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+};
+
+module.exports = {
+  register,
+  login,
+  getProfile,
 };

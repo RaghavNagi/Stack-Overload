@@ -1,6 +1,6 @@
 const Reply = require("../models/Reply");
 
-exports.addReply = async (req, res, next) => {
+const addReply = async (req, res, next) => {
   try {
     const { thread, parent, body } = req.body;
     const reply = await Reply.create({
@@ -15,7 +15,7 @@ exports.addReply = async (req, res, next) => {
   }
 };
 
-exports.getReplies = async (req, res, next) => {
+const getReplies = async (req, res, next) => {
   try {
     const { threadId } = req.params;
     const replies = await Reply.find({ thread: threadId }).populate(
@@ -28,7 +28,7 @@ exports.getReplies = async (req, res, next) => {
   }
 };
 
-exports.voteReply = async (req, res, next) => {
+const voteReply = async (req, res, next) => {
   try {
     const { vote } = req.body; // vote: 1 or -1
     const reply = await Reply.findById(req.params.id);
@@ -40,4 +40,10 @@ exports.voteReply = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+};
+
+module.exports = {
+  addReply,
+  getReplies,
+  voteReply,
 };
